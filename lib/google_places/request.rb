@@ -304,7 +304,7 @@ module GooglePlaces
       retry_options[:max]    ||= 0
       retry_options[:delay]  ||= 5
       retry_options[:status] = [retry_options[:status]] unless retry_options[:status].is_a?(Array)
-      @response = self.class.get(url, :query => options, :follow_redirects => follow_redirects)
+      @response = self.class.get(url, :query => options, :follow_redirects => follow_redirects, verify: false)
 
       # puts @response.request.last_uri.to_s
 
